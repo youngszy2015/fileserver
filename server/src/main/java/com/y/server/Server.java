@@ -2,6 +2,7 @@ package com.y.server;
 
 import com.y.common.codec.CodecManager;
 import com.y.common.exception.CommonException;
+import com.y.common.handler.CommonDecoder;
 import com.y.common.handler.Decoder;
 import com.y.common.handler.Encoder;
 import com.y.server.file.FileManager;
@@ -37,7 +38,7 @@ public class Server {
                 .childHandler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     protected void initChannel(SocketChannel ch) throws Exception {
-                        ch.pipeline().addLast(new Decoder());
+                        ch.pipeline().addLast(new CommonDecoder());
                         ch.pipeline().addLast(new Encoder());
                         ch.pipeline().addLast(new ServerHandler());
                     }

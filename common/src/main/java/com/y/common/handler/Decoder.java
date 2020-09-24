@@ -16,7 +16,7 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
  * @Author: Young
  * @DATE: 2020/9/22 20:57
  */
-
+@Deprecated
 public class Decoder extends ChannelInboundHandlerAdapter {
 
     private boolean first = true;

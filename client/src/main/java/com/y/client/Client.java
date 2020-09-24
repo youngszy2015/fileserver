@@ -8,16 +8,14 @@ import com.y.common.command.download.DownloadResponseCommand;
 import com.y.common.command.upload.UploadRequestCommand;
 import com.y.common.command.upload.UploadResponseCommand;
 import com.y.common.exception.CommonException;
-import com.y.common.handler.Decoder;
+import com.y.common.handler.CommonDecoder;
 import com.y.common.handler.Encoder;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
-import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.pool.ChannelPoolHandler;
-import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
@@ -62,7 +60,7 @@ public class Client {
             @Override
             public void channelCreated(Channel ch) throws Exception {
                 logger.info("pool create channel:" + ch.id().asShortText());
-                ch.pipeline().addLast(new Decoder());
+                ch.pipeline().addLast(new CommonDecoder());
                 ch.pipeline().addLast(new Encoder());
                 ch.pipeline().addLast(new ClientHandler());
             }

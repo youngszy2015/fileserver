@@ -1,9 +1,7 @@
 package com.y;
 
 import com.y.common.codec.CodecManager;
-import com.y.common.command.upload.UploadRequestCommand;
 import com.y.common.exception.CommonException;
-import com.y.common.handler.CommandHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
@@ -11,9 +9,7 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import org.apache.commons.io.FileUtils;
 
-import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class Client {
