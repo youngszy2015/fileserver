@@ -2,6 +2,7 @@ package com.y.client;
 
 import com.y.client.connection.ConnectionPool;
 import com.y.client.handler.ClientHandler;
+import com.y.common.InvokeFuture;
 import com.y.common.codec.CodecManager;
 import com.y.common.command.download.DownloadRequestCommand;
 import com.y.common.command.download.DownloadResponseCommand;
@@ -23,7 +24,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 
-import static com.y.client.InvokeFuture.INVOKE_FUTURE;
+import static com.y.common.InvokeFuture.INVOKE_FUTURE;
 
 public class Client {
 

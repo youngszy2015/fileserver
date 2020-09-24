@@ -1,5 +1,6 @@
 package com.y.common.handler;
 
+import com.y.common.InvokeFuture;
 import com.y.common.codec.CommandEncoder;
 import com.y.common.command.Command;
 import io.netty.buffer.ByteBuf;
@@ -31,6 +32,11 @@ public class Encoder extends ChannelOutboundHandlerAdapter {
                         logger.info("Encode command success:{} ", cmd);
                     } else {
                         future.cause().printStackTrace();
+                        //todo 设置异常返回，command还需要抽象
+                        InvokeFuture invokeFuture = ctx.channel().attr(InvokeFuture.INVOKE_FUTURE).get();
+                        if (null != invokeFuture) {
+
+                        }
                     }
                 }
             });

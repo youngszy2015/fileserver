@@ -1,4 +1,4 @@
-package com.y.client;
+package com.y.common;
 
 import io.netty.util.AttributeKey;
 

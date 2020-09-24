@@ -1,6 +1,6 @@
 package com.y.client.handler;
 
-import com.y.client.InvokeFuture;
+import com.y.common.InvokeFuture;
 import com.y.common.command.download.DownloadResponseCommand;
 import com.y.common.command.upload.UploadResponseCommand;
 import io.netty.channel.*;
